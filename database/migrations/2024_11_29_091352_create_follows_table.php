@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('offer_id');
             $table->text('description');
-            $table->timestamps('d/m/y');
+            $table->timestamps();
         });
     }
 
