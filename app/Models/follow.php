@@ -10,8 +10,5 @@ class follow extends Model
    protected $fillable = [
     'offer_id',
     'description',
-    'company',
-    'logo',
-    'state',
     ];
 }
