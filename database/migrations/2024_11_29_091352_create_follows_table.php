@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('follows', function (Blueprint $table) {
             $table->id();
-            $table->integer('offer_id');
+            $table->foreignId('offers_id')->constrained('offers')->onDelete('cascade');
             $table->text('description');
             $table->timestamps();
         });
