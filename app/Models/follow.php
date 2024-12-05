@@ -10,7 +10,7 @@ class Follow extends Model
 {
    protected $fillable = [
     'offer_id',
-    'description',
+    'news',
     ];
 
     public function offer(){
