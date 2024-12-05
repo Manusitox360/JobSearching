@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Follow;
+use App\Models\Offer;
 use Illuminate\Http\Request;
 
-class FollowController extends Controller
+class OfferController extends Controller
 {
-    /**
+    //
+     /**
      * Display a listing of the resource.
      */
     public function index()
@@ -34,7 +35,7 @@ class FollowController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(follow $follow)
+    public function show(offer $offer)
     {
         //
     }
@@ -42,7 +43,7 @@ class FollowController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(follow $follow)
+    public function edit(offer $offer)
     {
         //
     }
@@ -50,7 +51,7 @@ class FollowController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, follow $follow)
+    public function update(Request $request, offer $offer)
     {
         //
     }
@@ -58,7 +59,7 @@ class FollowController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(follow $follow)
+    public function destroy(offer $offer)
     {
         //
     }

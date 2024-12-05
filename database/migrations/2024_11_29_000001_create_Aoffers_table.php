@@ -17,7 +17,7 @@ return new class extends Migration
             $table->char('company');
             $table->string('logo');
             $table->boolean('state');
-            $table->timestamps('d/m/y');
+            $table->timestamps();
         });
     }
 
