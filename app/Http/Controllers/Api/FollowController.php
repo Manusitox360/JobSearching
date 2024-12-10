@@ -44,7 +44,7 @@ class FollowController extends Controller
                      'message' => 'La oferta no existe'
                   ], 404);
                 }
-                    
+
                  $followsData = collect($validated['news'])->map(function ($newsItem) use ($offer) {
                  return [
                        'offer_id' => $offer->id,
@@ -58,7 +58,7 @@ class FollowController extends Controller
                 return response()->json([
                     'message' => 'Las novedades han sido añadidas correctamente',
                     'offer' => $offer->load('follows'),
-                    ]);
+                    ], 200);
 
     }
 
@@ -68,6 +68,8 @@ class FollowController extends Controller
     public function show(string $id)
     {
         //
+        $follow = Offer::with('follows')->findOrFail($id);
+        return response()->json($follow, 200);
     }
 
     /**
