@@ -43,6 +43,7 @@ class FollowController extends Controller
                   return response()->json([
                      'message' => 'La oferta no existe'
                   ], 404);
+                }
                     
                  $followsData = collect($validated['news'])->map(function ($newsItem) use ($offer) {
                  return [
@@ -50,7 +51,7 @@ class FollowController extends Controller
                        'news' =>  $newsItem,
                     ];
                 });
-                }
+                
 
                 $offer->follows()->createMany($followsData);
 
