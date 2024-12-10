@@ -8,7 +8,7 @@ use App\Models\Follow;
 use Illuminate\Database\Eloquent\Casts\Json;
 use Symfony\Contracts\Service\Attribute\Required;
 
-class FollowController extends Controller
+class FollowApiController extends Controller
 {
     /**
      * Display a listing of the resource.
