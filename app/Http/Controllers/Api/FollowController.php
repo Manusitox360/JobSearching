@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\Offer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Follow;
 use Illuminate\Database\Eloquent\Casts\Json;
 use Symfony\Contracts\Service\Attribute\Required;
 
@@ -15,6 +16,8 @@ class FollowController extends Controller
     public function index()
     {
         //
+        $follows = Follow::all();
+        return response()->json($follows, 200);
     }
 
     /**
