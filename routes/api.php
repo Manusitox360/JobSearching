@@ -14,6 +14,6 @@ Route::delete('/offers/{id}', [OfferApiController::class, 'destroy'])->name('api
 
 Route::get('/follows', [FollowApiController::class, 'index'])->name('apiHomeFollows');
 Route::get('/follows/{id}', [FollowApiController::class, 'show'])->name('apiShowFollow');
-Route::post('/follows', [FollowApiController::class, 'store'])->name('apiStoreFollow');
+Route::post('/offers/{id}/follows', [FollowApiController::class, 'store'])->name('apiStoreFollow');
 Route::put('/follows/{id}', [FollowApiController::class, 'update'])->name('apiUpdateFollow');
 Route::delete('/follows/{id}', [FollowApiController::class, 'destroy'])->name('apiDestroyFollow');
