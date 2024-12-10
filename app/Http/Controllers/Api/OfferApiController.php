@@ -50,6 +50,17 @@ class OfferApiController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $offer = Offer::find($id);
+
+        $offer->update([
+            'info' => $request->info,
+            'company' => $request->company,
+            'logo' => $request->logo,
+            'state' => $request->state,
+        ]);
+        $offer->save();
+
+        return response()->json($offer, 200);
     }
 
     /**
@@ -58,5 +69,7 @@ class OfferApiController extends Controller
     public function destroy(string $id)
     {
         //
+        $offer = Offer::find($id);
+        $offer ->delete($id);
     }
 }
