@@ -18,7 +18,7 @@ class offerFactory extends Factory
     {
         return [
             //
-            'info' =>$this->faker->realText($maxNbChars=100),
+            'info' =>$this->faker->realText($maxNbChars=30),
             'company'=>$this->faker->name(),
             'logo' =>$this->faker->image(),
             'state' =>$this->faker->boolean(),
