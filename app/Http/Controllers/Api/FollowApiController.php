@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Api;
 use App\Models\Offer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Follow;
 use Illuminate\Database\Eloquent\Casts\Json;
 use Symfony\Contracts\Service\Attribute\Required;
 
-class FollowController extends Controller
+class FollowApiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,14 +16,8 @@ class FollowController extends Controller
     public function index()
     {
         //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        $follows = Follow::all();
+        return response()->json($follows, 200);
     }
 
     /**
@@ -40,21 +35,22 @@ class FollowController extends Controller
                   return response()->json([
                      'message' => 'La oferta no existe'
                   ], 404);
-                    
+                }
+
                  $followsData = collect($validated['news'])->map(function ($newsItem) use ($offer) {
                  return [
                        'offer_id' => $offer->id,
                        'news' =>  $newsItem,
                     ];
                 });
-                }
+                
 
                 $offer->follows()->createMany($followsData);
 
                 return response()->json([
                     'message' => 'Las novedades han sido añadidas correctamente',
                     'offer' => $offer->load('follows'),
-                    ]);
+                    ], 200);
 
     }
 
@@ -64,14 +60,8 @@ class FollowController extends Controller
     public function show(string $id)
     {
         //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+        $follow = Offer::with('follow')->findOrFail($id);
+        return response()->json($follow, 200);
     }
 
     /**
@@ -80,6 +70,16 @@ class FollowController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $follow = Follow::find($id);
+
+        $follow->update([
+            'offer_id' => $request->offer_id,
+            'news' => $request->news,
+        ]);
+
+        $follow->save();
+
+        return response()->json($follow, 200);
     }
 
     /**
@@ -88,5 +88,7 @@ class FollowController extends Controller
     public function destroy(string $id)
     {
         //
+        $follow = Follow::find($id);
+        $follow -> delete($id);
     }
 }
