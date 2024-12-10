@@ -74,7 +74,7 @@ class FollowController extends Controller
 
         $follow->update([
             'offer_id' => $request->offer_id,
-            'description' => $request->description,
+            'news' => $request->news,
         ]);
 
         $follow->save();
