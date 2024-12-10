@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->text('info');
             $table->char('company');
-            $table->string('logo');
+            $table->url('logo');
             $table->boolean('state');
             $table->timestamps();
         });
