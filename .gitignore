@@ -23,3 +23,5 @@ yarn-error.log
 /.zed
 *.log
 *.logs
+.phpunit.result.cache
+storage/logs/laravel.log
