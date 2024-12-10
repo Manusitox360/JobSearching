@@ -24,7 +24,7 @@ class OfferTest extends TestCase
             'info' => 'Programador Backend',
             'company' => 'Hispasec Cibersecurity',
             'logo' => 'https://smartcitycluster.org/wp-content/uploads/2015/08/logo-hispasec.jpg',
-            'state' => 'In progress',
+            'state' => 'In Progress',
         ]);
 
         $data = ['info' => 'Programador Backend'];
@@ -39,7 +39,7 @@ class OfferTest extends TestCase
             'info' => 'Programador FullStack',
             'company' => 'Linkedin',
             'logo' => 'https://blog.waalaxy.com/wp-content/uploads/2021/01/3-1.png',
-            'status' => 'In progress',
+            'status' => 'In Progress',
         ]);
 
         $response = $this->get(route('apiHomeOffers'));
@@ -52,7 +52,7 @@ class OfferTest extends TestCase
             'info' => 'Programador FullStack',
             'company' => 'Linkedin',
             'logo' => 'https://blog.waalaxy.com/wp-content/uploads/2021/01/3-1.png',
-            'status' => 'In progress',
+            'status' => 'In Progress',
         ]));
         $data = ['company' => 'Linkedin'];
 

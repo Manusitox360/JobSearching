@@ -16,7 +16,7 @@ return new class extends Migration
             $table->text('info');
             $table->char('company');
             $table->url('logo');
-            $table->boolean('state');
+            $table->enum('state', ['In Progress','Finished']);
             $table->timestamps();
         });
     }
