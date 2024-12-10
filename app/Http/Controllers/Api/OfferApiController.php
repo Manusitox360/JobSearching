@@ -22,6 +22,16 @@ class OfferApiController extends Controller
     public function store(Request $request)
     {
         //
+        $offer = Offer::create([
+            'info' => $request->info,
+            'company' => $request->company,
+            'logo' => $request->logo,
+            'state' => $request->state, 
+         ]);
+ 
+         $offer->save();
+ 
+         return response()->json($offer, 200);
     }
 
     /**
@@ -30,6 +40,8 @@ class OfferApiController extends Controller
     public function show(string $id)
     {
         //
+        $offer = Offer::with('follows')->findOrFail($id);
+        return response()->json($offer, 200);
     }
 
     /**
