@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Follow;
 use App\Models\Offer;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -16,5 +17,7 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         Offer::factory(10)->create();
+
+        Follow::factory(10)->create();
     }
 }
