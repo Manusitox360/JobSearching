@@ -13,27 +13,27 @@
         </div>
     </div>
 
-    <div class="offerProgress">
+    <div class="offerFollow">
         <table class="table table-bordered container" id="table">
             <thead>
                 <tr>
                     <th scope="col" id="headerTable">#</th>
                     <th scope="col" id="headerTable">Date</th>
-                    <th scope="col" id="headerTable">Comment</th>
+                    <th scope="col" id="headerTable">News</th>
                 </tr>
             </thead>
             <tbody>
-                @if (!($offer->progresses)->isEmpty())
-                    @foreach ($offer->progresses as $progress)
+                @if (!($offer->follows)->isEmpty())
+                    @foreach ($offer->follows as $follow)
                         <tr>
-                            <td>{{ $progress->id }}</td>
-                            <td>{{ $progress->created_at }}</td>
-                            <td>{{ $progress->comment }}</td>
+                            <td>{{ $follow->id }}</td>
+                            <td>{{ $follow->created_at }}</td>
+                            <td>{{ $follow->news }}</td>
                         </tr>
                     @endforeach
                 @else
                     <tr>
-                        <td colspan="3">There's no progress yet</td>
+                        <td colspan="2"> There's no follow </td>
                     </tr>
                 @endif
             </tbody>

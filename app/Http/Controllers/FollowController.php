@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Offer;
 use App\Models\Follow;
 use Illuminate\Http\Request;
 
@@ -13,6 +14,8 @@ class FollowController extends Controller
     public function index()
     {
         //
+        $offers = Offer::with('follows')->get();
+        return view('home', compact('offers'));
     }
 
     /**
