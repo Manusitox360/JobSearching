@@ -19,7 +19,7 @@ class FollowFactory extends Factory
     {
         return [
             //
-            'offer_id' => Offer::all()->random()->id,
+            'offer_id' => $this->faker->numberBetween(1,50),
             'news' => $this->faker->text(),
         ];
     }
