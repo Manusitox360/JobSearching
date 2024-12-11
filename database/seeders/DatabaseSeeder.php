@@ -17,7 +17,5 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         Offer::factory(10)->create();
-
-        Follow::factory(10)->create();
     }
 }
