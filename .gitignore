@@ -25,3 +25,9 @@ yarn-error.log
 *.logs
 .phpunit.result.cache
 storage/logs/laravel.log
+/coverage-report
+*.cache
+.phpunit.result.cache
+.phpunit.result.cache
+storage/logs/laravel.log
+*.log
