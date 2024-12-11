@@ -1,7 +1,6 @@
 <?php
 
 namespace Database\Factories;
-
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -20,8 +19,8 @@ class offerFactory extends Factory
             //
             'info' =>$this->faker->realText($maxNbChars=30),
             'company'=>$this->faker->name(),
-            'logo' =>$this->faker->image(),
-            'state' =>$this->faker->boolean(),
+            'logo' =>$this->faker->imageUrl(),
+            'state' => $this->faker->boolean(),
         ];
     }
 }
