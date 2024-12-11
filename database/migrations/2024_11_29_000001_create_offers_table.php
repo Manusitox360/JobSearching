@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('offers', function (Blueprint $table) {
             $table->id();
             $table->text('info');
-            $table->char('company');
-            $table->url('logo');
-            $table->enum('state', ['In Progress','Finished']);
+            $table->text('company');
+            $table->text('logo');
+            $table->boolean('state');
             $table->timestamps();
         });
     }
