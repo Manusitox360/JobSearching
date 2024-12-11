@@ -10,17 +10,23 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 class Offer extends Model
 {
     //
-    Use HasFactory;
+    use HasFactory;
     protected $fillable = [
         'info',
         'company',
         'logo',
         'state',
-        
+
     ];
 
 
-    public function follows(): HasMany {
-        return $this->hasMany(Follow::class, 'offer_id');
-       }
+    public function follows(): HasMany
+    {
+        return $this->hasMany(Follow::class);
+    }
+
+    public function convertBooleanToText()
+    {
+        return $this->state ? 'In Progress' : 'Finished';
+    }
 }
