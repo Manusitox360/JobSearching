@@ -57,23 +57,22 @@ class FollowApiController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $offerId, string $id)
     {
         //
-        $follow = Offer::with('follow')->findOrFail($id);
+        $follow = Follow::findOrFail($id);
         return response()->json($follow, 200);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $offerId, string $id)
     {
         //
         $follow = Follow::find($id);
 
         $follow->update([
-            'offer_id' => $request->offer_id,
             'news' => $request->news,
         ]);
 
@@ -85,10 +84,11 @@ class FollowApiController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id, string $offerId)
     {
         //
         $follow = Follow::find($id);
         $follow -> delete($id);
+        return response()->json(['message' => 'Follow deleted successfully'], 200);
     }
 }
