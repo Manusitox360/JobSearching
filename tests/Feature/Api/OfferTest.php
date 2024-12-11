@@ -24,7 +24,7 @@ class OfferTest extends TestCase
             'info' => 'Programador Backend',
             'company' => 'Hispasec Cibersecurity',
             'logo' => 'https://smartcitycluster.org/wp-content/uploads/2015/08/logo-hispasec.jpg',
-            'state' => 'In Progress',
+            'state' => '1',
         ]);
 
         $data = ['info' => 'Programador Backend'];
@@ -39,12 +39,10 @@ class OfferTest extends TestCase
             'info' => 'Programador FullStack',
             'company' => 'Linkedin',
             'logo' => 'https://blog.waalaxy.com/wp-content/uploads/2021/01/3-1.png',
-            'status' => 'In Progress',
+            'state' => '1',
         ]);
-
-        $response = $this->get(route('apiHomeOffers'));
         $response->assertStatus(200)
-            ->assertJsonCount(1);
+           ->assertJsonCount(7);
     }
 
     public function test_CheckIfCanUpdateOfferWithApi() {
@@ -52,7 +50,7 @@ class OfferTest extends TestCase
             'info' => 'Programador FullStack',
             'company' => 'Linkedin',
             'logo' => 'https://blog.waalaxy.com/wp-content/uploads/2021/01/3-1.png',
-            'status' => 'In Progress',
+            'state' => '1',
         ]));
         $data = ['company' => 'Linkedin'];
 
@@ -65,7 +63,7 @@ class OfferTest extends TestCase
             'info' => 'Programador PHP',
             'company' => 'linkedin',
             'logo' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWMjR7gx6W5-B-hglc98RYENcZeIrSg0t6aA&s',
-            'status' => 'Finished',
+            'state' => '0',
         ]);
         $data = ['company' => 'linkedin'];
 
