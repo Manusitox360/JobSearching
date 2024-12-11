@@ -40,4 +40,10 @@
             </table>
         </div>
     </div>
+    <footer class="text-center mt-5">
+        <div>
+            <a href="https://github.com/Manusitox360" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbqj9Ii13d6hx5a9kyLnC5A8A96LDSaSZv_w&s" alt="github logo"></a> | 
+            <a href="https://www.linkedin.com/in/manuel-espinosa-guillén-950781294/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/256/174/174857.png" alt="linkedin logo"></a>
+        </div>
+    </footer>
 @endsection

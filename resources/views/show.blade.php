@@ -2,15 +2,28 @@
 
 @section('content')
     <a href="{{ route('home') }}" class="btn btn-secondary">Home</a>
+    
     <div class="offerInfo">
-        <div>
-            <h2>{{ $offer->info }}</h2>
-            <h4>{{ $offer->company }}</h4>
-        </div>
-        <div>
-            <a href="{{ $offer->url }}"> offer link </a>
-            <p>{{ $offer->convertBooleanToText()}}</p>
-        </div>
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th>Info</th>
+                    <td>{{ $offer->info }}</td>
+                </tr>
+                <tr>
+                    <th>Company</th>
+                    <td>{{ $offer->company }}</td>
+                </tr>
+                <tr>
+                    <th>Logo</th>
+                    <td><a href="{{ $offer->url }}"><img class="w-25" src="{{ $offer->logo }}" alt="logo de la compañia">{{ $offer->url }}</a></td>
+                </tr>
+                <tr>
+                    <th>Status</th>
+                    <td>{{ $offer->convertBooleanToText() }}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
     <div class="offerFollow">
@@ -23,7 +36,7 @@
                 </tr>
             </thead>
             <tbody>
-                @if (!($offer->follows)->isEmpty())
+                @if ($offer->follows->isNotEmpty())
                     @foreach ($offer->follows as $follow)
                         <tr>
                             <td>{{ $follow->id }}</td>
@@ -33,7 +46,7 @@
                     @endforeach
                 @else
                     <tr>
-                        <td colspan="2"> There's no follow </td>
+                        <td colspan="3"> There's no follow </td>
                     </tr>
                 @endif
             </tbody>
