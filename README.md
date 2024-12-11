@@ -159,7 +159,7 @@ There are 5 endpoints for each table, since we have 2 tables, there's a total of
 ```
 
 ## 👾 Tests
-
+![Test](./public/docs/TestCoverage.png)
 This project has  **80%** of test coverage.
 
 You can try the tests to see the coverage in the terminal using:
