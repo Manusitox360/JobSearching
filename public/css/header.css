@@ -1,3 +1,7 @@
-header{
-    background-color: aqua;
+header {
+    background-color: #4CAF50; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 20px; /* Espaciado interno */
+    text-align: center; /* Centrar el texto */
+    font-size: 24px;
 }

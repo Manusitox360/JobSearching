@@ -1,3 +1,20 @@
-footer{
-    background-color: beige;
+footer {
+    background-color: beige; /* Color de fondo */
+    color: #333; /* Color del texto */
+    text-align: center; /* Alineación del texto */
+    padding: 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    border-top: 2px solid #ccc; /* Borde superior */
+    position: relative; /* Posicionamiento relativo */
+    bottom: 0; /* Alineación al fondo */
+    width: 100%; /* Ancho completo */
+}
+
+footer a {
+    color: #0066cc; /* Color de los enlaces */
+    text-decoration: none; /* Sin subrayado */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
 }
