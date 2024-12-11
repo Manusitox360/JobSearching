@@ -1,66 +1,197 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Job Searching App 💼
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+>[!CAUTION]
+>Please read all the points of the README in order to make good use of the project. Thank you.
 
-## About Laravel
+## 💡 Description
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+This project consists of a website where you keep an eye of the offers you applied.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+You can track offers, add news;
+For example: You just got an incredible intervew for the company you most like, you can add that 'news' in the offer you applied for.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+This function is so usefull for all the follows you will like to add.
 
-## Learning Laravel
+## 💼 Proyect guide
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+On the home page there is a table with all the offers you have previously inserted.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+You can see the date of creation of an offer, the job info, the company,the logo of the company and if it is 'In follow' or 'Finished'.
+You can also click any offer to get into a more detailed view.
+In addition you can see the date of last update of the offers, If there aren't any 'news' for an offer it will print "❌ No hay noticias disponibles".
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+This way you can easily track how long has been since an offer had an update.
 
-## Laravel Sponsors
+![Show view]
+<p align="center"><em>Home view</em></p>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+In the view to see the details of an offer, you will see the 'news' of the offer. It will print all the 'news' and when did them got created.
 
-### Premium Partners
+## 👓 🕶️ 🥽 Installation requierements
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+To run this project you will need:
 
-## Contributing
+1. XAMPP (or any other local server that supports PHP and MySQL)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+2. Operating System terminal
 
-## Code of Conduct
+3. Install Composer
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+4. Install NPM via Node.js
 
-## Security Vulnerabilities
+5. Postman or many other platform to use the API
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+6. Xdebug 
 
-## License
+## 💻 Installation
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+1. Clone the repository:
+```
+    git clone https://github.com/Manusitox360/JobSearching.git
+```
+
+2. Install Composer:
+```
+    composer install
+```
+
+3. Install NPM:
+```
+    npm install
+```
+
+4. Create a '.env' file by renaming the example '.env.example' file and modifing the lines:
+    - DB_CONNECTION=mysql
+    - DB_DATABASE=JobSearching
+
+5. Create a database in MySQL with no tables
+
+
+6. Generate all the tables and fake values:
+```
+    php artisan migrate:fresh --seed
+```
+
+7. Run NPM:
+```
+    npm run dev
+```
+
+8. Run Laravel (in other terminal):
+```
+    php artisan serve
+```
+
+This will give you an url that leads you to the web, usually:
+```
+    http://127.0.0.1:8000/
+```
+
+## 📚 Database diagram
+
+This is the database diagram for this project. There are two tables, **Offers** and **Follows**. It's a **OneToMany relation**  because one offer could have many follows.
+In the other hand, one follow can only be attached to one offer.
+
+![Database diagram](./public/docs/databaseDiagram.png)
+
+## 🔍 API Endpoints
+
+There are 5 endpoints for each table, since we have 2 tables, there's a total of 10 endpoints to interact with the App.
+
+### Offers
+
+>[!NOTE]
+>Offer fields: info, company, logo, state (In progress or Finished).
+
+- GET (read all offers)
+```
+    http://127.0.0.1:8000/api/offers
+```
+
+- GET BY ID (reads one offer by ID & all his follows)
+```
+    http://127.0.0.1:8000/api/offers/{id}
+```
+
+- POST (inserts a new offer)
+```
+    http://127.0.0.1:8000/api/offers
+```
+
+- PUT (updates an offer by ID)
+```
+    http://127.0.0.1:8000/api/offers/{id}
+```
+
+- DELETE (delete an offer by ID)
+```
+    http://127.0.0.1:8000/api/offers/{id}
+```
+
+### Progress
+
+>[!NOTE]
+>Follow fields: offer_id, news.
+
+- GET (read all Follows)
+```
+    http://127.0.0.1:8000/api/offers/{offerId}/follows/{id}
+```
+
+- GET BY ID (read one follow selected by ID)
+```
+    http://127.0.0.1:8000/api/offers/{offerId}/follows/{id}
+```
+
+- POST (creates a new follow on a specific offer by id.)
+```
+    http://127.0.0.1:8000/api/offers/{offerId}/follows
+```
+
+- PUT (updates a follow by ID)
+```
+    http://127.0.0.1:8000/api/offers/{offerId}/follows/{id}
+```
+
+- DELETE (deletes a follow by ID)
+```
+    http://127.0.0.1:8000/api/offers/{offerId}/follows/{id}
+```
+
+## 👾 Tests
+
+This project has  **80%** of test coverage.
+
+You can try the tests to see the coverage in the terminal using:
+```
+   php artisan test --coverage
+```
+
+![Test coverage]
+
+>[!TIP]
+>You can also see the coverage in a web browser using:
+>```
+>   php artisan test --coverage-html=coverage-report
+>```
+
+## 🛠️ Technologies and Tools
+
+<a href='https://github.com/shivamkapasia0' target="_blank"><img alt='PHP' src='https://img.shields.io/badge/PHP-100000?style=for-the-badge&logo=PHP&logoColor=white&labelColor=777BB4&color=777BB4'/></a>
+<a href='https://github.com/shivamkapasia0' target="_blank"><img alt='HTML5' src='https://img.shields.io/badge/HTML5-100000?style=for-the-badge&logo=HTML5&logoColor=white&labelColor=E34F26&color=E34F26'/></a>
+<a href='https://github.com/shivamkapasia0' target="_blank"><img alt='CSS3' src='https://img.shields.io/badge/CSS3-100000?style=for-the-badge&logo=CSS3&logoColor=white&labelColor=1572B6&color=1572B6'/></a>
+<a href='https://github.com/shivamkapasia0' target="_blank"><img alt='MySQL' src='https://img.shields.io/badge/MySQL-100000?style=for-the-badge&logo=MySQL&logoColor=white&labelColor=4479A1&color=4479A1'/></a>
+<a href='https://github.com/shivamkapasia0' target="_blank"><img alt='Laravel' src='https://img.shields.io/badge/Laravel-100000?style=for-the-badge&logo=Laravel&logoColor=white&labelColor=FF2D20&color=FF2D20'/></a>
+<a href='https://github.com/shivamkapasia0' target="_blank"><img alt='Bootstrap' src='https://img.shields.io/badge/Bootstrap-100000?style=for-the-badge&logo=Bootstrap&logoColor=white&labelColor=7952B3&color=7952B3'/></a>
+
+<a href='https://github.com/shivamkapasia0' target="_blank"><img alt='GitHub' src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=GitHub&logoColor=white&labelColor=181717&color=181717'/></a>
+<a href='https://github.com/shivamkapasia0' target="_blank"><img alt='phpMyAdmin' src='https://img.shields.io/badge/phpMyAdmin-100000?style=for-the-badge&logo=phpMyAdmin&logoColor=white&labelColor=6C78AF&color=6C78AF'/></a>
+<a href='https://github.com/shivamkapasia0' target="_blank"><img alt='Postman' src='https://img.shields.io/badge/Postman-100000?style=for-the-badge&logo=Postman&logoColor=white&labelColor=FF6C37&color=FF6C37'/></a>
+<a href='https://github.com/shivamkapasia0' target="_blank"><img alt='XAMPP' src='https://img.shields.io/badge/XAMPP-100000?style=for-the-badge&logo=XAMPP&logoColor=white&labelColor=FB7A24&color=FB7A24'/></a>
+<a href='https://github.com/shivamkapasia0' target="_blank"><img alt='Canva' src='https://img.shields.io/badge/Canva-100000?style=for-the-badge&logo=Canva&logoColor=white&labelColor=00C4CC&color=00C4CC'/></a>
+
+## 👨🏻‍💻 Author
+
+This project has been developed by: 
+
+[Manuel Espinosa Guillén](https://github.com/Manusitox360)
