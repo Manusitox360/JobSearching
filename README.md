@@ -4,8 +4,8 @@
 >Please read all the points of the README in order to make good use of the project. Thank you.
 
 ## 💡 Description
-
-This project consists of a website where you keep an eye of the offers you applied.
+![Description](./public/docs/HomePage.png)
+This project consists in a website where you keep an eye of the offers you applied.
 
 You can track offers, add news;
 For example: You just got an incredible intervew for the company you most like, you can add that 'news' in the offer you applied for.
