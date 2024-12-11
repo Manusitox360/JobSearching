@@ -9,7 +9,7 @@
         </div>
         <div>
             <a href="{{ $offer->url }}"> offer link </a>
-            <p>{{ $offer->state }}</p>
+            <p>{{ $offer->convertBooleanToText()}}</p>
         </div>
     </div>
 
